@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('../partials/head', {pageName: 'Ínicio'}); %>
+
+  <body class="container bg-dark" style="color: #fff">
+    <%- include('../partials/header'); %>
+
+    <main class="container mt-5">
+      <div class="jumbotron">
+        <h1>NodeJS com EJS</h1>
+        <p>Vamos aprender a trabalhar com arquivos EJS</p>
+      </div>
+
+      <table class="mt-5 text-center">
+        <tr style="border-bottom: 1px solid #fff">
+          <td
+            style="
+              font-size: 1.5rem;
+              font-weight: bold;
+              padding: 0.5rem;
+              padding-right: 1rem;
+            "
+          >
+            Funcionário
+          </td>
+          <td
+            style="
+              font-size: 1.5rem;
+              font-weight: bold;
+              padding: 0.5rem;
+              padding-right: 1rem;
+            "
+          >
+            Time
+          </td>
+          <td
+            style="
+              font-size: 1.5rem;
+              font-weight: bold;
+              padding: 0.5rem;
+              padding-right: 1rem;
+            "
+          >
+            Data de Admissão
+          </td>
+        </tr>
+        <% data.forEach((employe) => { %>
+        <tr style="border-bottom: 1px solid #fff">
+          <td
+            style="
+              padding: 0.5rem;
+              padding-right: 1rem;
+              color: rgb(42, 236, 194);
+              font-weight: bold;
+            "
+          >
+            <%= employe.name %>
+          </td>
+          <td style="padding: 0.5rem; padding-right: 1rem">
+            <%= employe.team %>
+          </td>
+          <td style="padding: 0.5rem; padding-right: 1rem">
+            <%= employe.admission_at %>
+          </td>
+        </tr>
+        <% }) %>
+      </table>
+    </main>
+
+    <%- include('../partials/footer'); %>
+  </body>
+</html>
